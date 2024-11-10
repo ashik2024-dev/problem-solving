@@ -12,44 +12,24 @@ while (t--)
 {
     int n;
     cin>>n;
-    vector<int> A(n);
+    ll a[n];
+    map<int,int> m;
     for (int i = 0; i < n; i++)
     {
-        cin>>A[i];
-        
-    }
-    int gcd = A[0];
-    for (int i = 1; i < n; i++)
-    {
-        gcd = __gcd(gcd, A[i]);
-    }
-
-    bool possible = true;
-    for (int i = 0; i < n; i++)
-    {
-        if (A[i]% gcd != 0)
+        cin>>a[i];
+        if (a[i] != 0)
         {
-            possible = false;
-            break;
+            m[a[i]]++;
         }
     }
-
-    if (possible)
+    if (m.size() == 1 ||m.size() == 0)
     {
         cout<<"YES"<<endl;
-    } else
+    }else
     {
-        cout<<"NO"<<endl;
+     cout<<"NO"<<endl;   
     }
-    
-    
-    
-    
 
-    
-    
-   
-    
 }
 
   return 0;
