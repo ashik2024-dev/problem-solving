@@ -32,11 +32,12 @@ int main(){
 
         int flag = 0;
         if (l==r){
-            for (ll i = r-1, j = 1; i >= 2;i--,j++){
-                if (isValid(i, j, l, r) && gcd(i, j) != 1)
+            for (ll i = 2; i * i <= l;i++)
+            {
+                if (l%i==0)
                 {
                     flag = 1;
-                    cout << i << " " << j << nl;
+                    cout << i << " " << l-i << nl;
                     break;
                 }
             }
